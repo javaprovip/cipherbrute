@@ -1,11 +1,24 @@
 package cipherbrute;
 
+import java.io.*;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.stream.Stream;
+
 public class caesar_cipher {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+       //Path path = Path.of("C:\Users\Сергей\Desktop\test.txt");
+       //Scanner input = new Scanner(path);
+
         Scanner input = new Scanner(System.in);
-        caesarcipher caesar = new caesarcipher();
+
+        caesarCipher caesar = new caesarCipher();
 
         //Ask the user the Caesar key
         System.out.println("Enter the Caesar key:");
@@ -58,7 +71,9 @@ public class caesar_cipher {
         }
     }
 }
-class caesarcipher {
+
+
+class caesarCipher {
 
     String encryptalphabet(int key) {
         //Get the standard alphabet
